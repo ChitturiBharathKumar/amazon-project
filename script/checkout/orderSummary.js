@@ -1,9 +1,10 @@
-import {cart, removeFromCart, updateDeliveryOption} from '../../data/cart.js';
+import {cart, removeFromCart, updateDeliveryOption, updateCart} from '../../data/cart.js';
 import {products, getProduct} from '../../data/products.js';
 import { formatCurrency } from '../utils/money.js';
 import {deliveryOptions, getDeliveryOption} from '../../data/deliveryOptions.js';
 import { renderPaymentSummary } from './paymentSummary.js';
 //import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
+//import dayjs from 'dayjs';
 
 export function renderOrderSummary() {
   let cartSummaryHTML = '';
@@ -119,6 +120,7 @@ document.querySelectorAll('.js-delete-link')
       .js-cart-item-container-${productId}
       `);
     container.remove();
+    //updateCart();
     //renderOrderSummary();
     renderPaymentSummary();
   });
